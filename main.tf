@@ -15,10 +15,10 @@ resource "aws_lambda_function" "lambda_requests" {
 }
 
 resource "aws_route_table" "example" {
-  vpc_id = vpc-00bf0d10a6a41600c
+  vpc_id =  aws_vpc.example.id
     route {
     cidr_block = "10.0.42.0/24"
-    gateway_id = nat-04bad8be564a37c70
+    gateway_id = aws_nat_gateway.example.id
     
   }
     tags = {
