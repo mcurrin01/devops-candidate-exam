@@ -14,7 +14,7 @@ resource "aws_lambda_function" "lambda_requests" {
         timeout       = 10
 
     vpc_config {
-    subnet_ids = [aws_subnet.private.id]
+    subnet_ids = [aws_subnet.mySubnet.id]
     security_group_ids = [aws_default_security_group.default_security_group.id]
   }
 }
