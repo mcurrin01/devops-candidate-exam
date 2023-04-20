@@ -8,7 +8,7 @@ resource "aws_lambda_function" "lambda_requests" {
         function_name = "lambda_requests"
         filename      = "lambda_requests.zip"
         source_code_hash = data.archive_file.python_lambda_package.output_base64sha256
-        role          = aws_iam_role.lambda_role.arn
+        role          = "DevOps-Candidate-Lambda-Role"
         runtime       = "python3.7"
         handler       = "lambda_function.lambda_handler"
         timeout       = 10
@@ -20,6 +20,9 @@ resource "aws_route_table" "example" {
     cidr_block = "10.0.42.0/24"
     gateway_id = nat-04bad8be564a37c70
     
+  }
+    tags = {
+    Name = "example"
   }
 }
 

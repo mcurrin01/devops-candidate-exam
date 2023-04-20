@@ -3,8 +3,10 @@ provider "aws" {
 }
 
 # Add your S3 backend configuration here - done?
-resource "aws_s3_bucket" "mybucket" {
-Bucket = "3.devops.candidate.exam"
-Region = "ap-south-1"
-Key = "mark.currin"
+terraform {
+  backend "s3" {
+    bucket = "3.devops.candidate.exam"
+    key    = "mark.currin"
+    region = "ap-south-1"
+  }
 }
