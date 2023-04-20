@@ -4,6 +4,7 @@ pipeline{
         stage("TF Init"){
             steps{
                 echo "Executing Terraform Init"
+                echo "Hello World 0.001"
             }
         }
         stage("TF Validate"){
