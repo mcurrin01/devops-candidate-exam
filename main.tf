@@ -28,12 +28,22 @@ resource "aws_subnet" "mySubnet" {
     Name = "mySubnet"
   }
 }
+
 resource "aws_route_table" "myRouteTable" {
   vpc_id =  data.aws_vpc.vpc.id
      tags = {
     Name = "myRouteTable"
   }
 }
+
+
+resource "aws_route_table" "example" {
+  vpc_id =  data.aws_vpc.vpc.id
+     tags = {
+    Name = "example"
+  }
+}
+
 
 resource "aws_route" "myRoute" {
 
