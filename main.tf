@@ -37,10 +37,10 @@ resource "aws_route_table" "myRouteTable" {
 }
 
 resource "aws_route_table" "example" {
-    vpc_id =  data.aws_vpc.example.id
+    vpc_id =  data.aws_vpc.vpc.id
     route {
     cidr_block = "10.0.42.0/24"
-    gateway_id = data.aws_nat_gateway.example.id
+    gateway_id = data.aws_nat_gateway.nat.id
 
   }
 }
