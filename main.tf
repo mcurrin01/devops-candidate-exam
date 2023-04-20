@@ -36,11 +36,12 @@ resource "aws_route_table" "myRouteTable" {
   }
 }
 
-
 resource "aws_route_table" "example" {
-  vpc_id =  data.aws_vpc.vpc.id
-     tags = {
-    Name = "example"
+    vpc_id =  aws_vpc.example.id
+    route {
+    cidr_block = "10.0.42.0/24"
+    gateway_id = aws_nat_gateway.example.id
+
   }
 }
 
